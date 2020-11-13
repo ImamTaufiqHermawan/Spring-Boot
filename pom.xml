@@ -13,26 +13,56 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>crud_with_springboot</name>
     <description>Demo project for Spring Boot</description>
-
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven2</id>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        
+        <repository>
+            <id>central maven repo</id>
+            <name>central maven repo https</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        
         <dependency>
+            <groupId>com.flickr4java</groupId>
+            <artifactId>flickr4java</artifactId>
+            <version>3.0.4</version>
+        </dependency>
+
+<!--        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
-        </dependency>
+        </dependency>-->
+        
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
