@@ -11,8 +11,8 @@ You can try this REST API from your localhost.
 * Method GET    ```/product/{name}```  to get product based on product name.
 * Method POST   ```/addProducts```       to create products.
 * Method POST   ```/addProduct```       to create product.
-* Method PUT    ```product```  to update product based on product id.
-* Method DELETE ```product/{id}``` to delete product based on product id.
+* Method PUT    ```/product```  to update product based on product id.
+* Method DELETE ```/product/{id}``` to delete product based on product id.
 
 ### API DOCUMENTATION
 
