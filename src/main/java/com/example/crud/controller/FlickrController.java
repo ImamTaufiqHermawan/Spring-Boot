@@ -9,6 +9,7 @@ import com.flickr4java.flickr.photos.Photo;
 import com.flickr4java.flickr.photos.PhotoList;
 import com.flickr4java.flickr.photos.PhotosInterface;
 import com.flickr4java.flickr.photos.SearchParameters;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,19 +19,20 @@ import org.springframework.beans.factory.annotation.Value;
 
 @RestController
 public class FlickrController {
+
     @Autowired
     FlickrRepo flickrRepo;
-    
+
     @Value("${api.key}")
     private String apiKey;
-    
+
     @Value("${secret.key}")
     private String secretKey;
-    
+
     @GetMapping("/flickr")
     public PhotoList<Photo> search(@RequestParam String text) throws FlickrException {
         Flickr f = new Flickr(apiKey, secretKey, new REST());
-        
+
         PhotosInterface photos = f.getPhotosInterface();
         SearchParameters params = new SearchParameters();
         params.setMedia("videos"); // One of "photos", "videos" or "all"
@@ -39,9 +41,9 @@ public class FlickrController {
         PhotoList<Photo> results = photos.search(params, 5, 0);
 
         PhotoEntity photo = new PhotoEntity();
-                
-        results.forEach(p ->
-        {
+
+        results.forEach(p
+                -> {
             photo.setTitle(p.getTitle());
             photo.setUrl(p.getUrl());
             flickrRepo.save(photo);
@@ -49,5 +51,9 @@ public class FlickrController {
         return results;
     }
     
+    @GetMapping("/photos")
+    public List<PhotoEntity> getPhotos() {
+        return flickrRepo.findAll();
+    }
 
 }

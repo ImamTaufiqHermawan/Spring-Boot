@@ -9,4 +9,5 @@ public class CrudWithSpringbootApplication {
     public static void main(String[] args) {
         SpringApplication.run(CrudWithSpringbootApplication.class, args);
     }
+    
 }
