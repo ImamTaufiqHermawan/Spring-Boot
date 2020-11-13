@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author imam
  */
+
 @Repository
 public interface FlickrRepo extends JpaRepository<PhotoEntity, Long>{
     

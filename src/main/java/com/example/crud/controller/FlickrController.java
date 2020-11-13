@@ -30,8 +30,6 @@ public class FlickrController {
     @GetMapping("/flickr")
     public PhotoList<Photo> search(@RequestParam String text) throws FlickrException {
         Flickr f = new Flickr(apiKey, secretKey, new REST());
-        // TestInterface testInterface = f.getTestInterface();
-        // Collection results = testInterface.echo(Collections.EMPTY_MAP);
         
         PhotosInterface photos = f.getPhotosInterface();
         SearchParameters params = new SearchParameters();

@@ -18,13 +18,13 @@ import lombok.Data;
  *
  * @author imam
  */
+
 @Entity
 @Table(name = "photo")
 @Data
 public class PhotoEntity implements Serializable {
 
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-//    @Column(name = "id")
     private Long id;
     private String title;
     private String url;

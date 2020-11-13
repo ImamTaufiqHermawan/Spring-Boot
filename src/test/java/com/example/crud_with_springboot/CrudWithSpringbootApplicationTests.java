@@ -9,5 +9,4 @@ class CrudWithSpringbootApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
