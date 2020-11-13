@@ -1,6 +1,7 @@
-package com.example.crud_with_springboot.controller;
+package com.example.crud.controller;
 
-import com.example.crud_with_springboot.repository.FlickrRepo;
+import com.example.crud.model.PhotoEntity;
+import com.example.crud.repository.FlickrRepo;
 import com.flickr4java.flickr.Flickr;
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.REST;
@@ -8,13 +9,9 @@ import com.flickr4java.flickr.photos.Photo;
 import com.flickr4java.flickr.photos.PhotoList;
 import com.flickr4java.flickr.photos.PhotosInterface;
 import com.flickr4java.flickr.photos.SearchParameters;
-import com.flickr4java.flickr.test.TestInterface;
-import java.util.Collection;
-import java.util.Collections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Value;

@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.crud_with_springboot.repository;
+package com.example.crud.repository;
 
-import com.example.crud_with_springboot.controller.PhotoEntity;
-import com.flickr4java.flickr.photos.Photo;
+import com.example.crud.model.PhotoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author imam
  */
+@Repository
 public interface FlickrRepo extends JpaRepository<PhotoEntity, Long>{
     
 }

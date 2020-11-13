@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.crud_with_springboot.controller;
+package com.example.crud.model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -17,7 +18,7 @@ import lombok.Data;
 @Entity
 @Table(name = "photo")
 @Data
-public class PhotoEntity {
+public class PhotoEntity implements Serializable {
     @Id
     private Long id;
     private String title;
