@@ -47,9 +47,6 @@ public class FlickrController {
             photo.setTitle(p.getTitle());
             photo.setUrl(p.getUrl());
             flickrRepo.save(photo);
-//            System.out.println(String.format("Title: %s", p.getTitle()));
-//            System.out.println(String.format("Media: %s", p.getMedia()));
-//            System.out.println(String.format("Original Video URL: %s", p.getVideoOriginalUrl()));
         });
         return results;
     }
