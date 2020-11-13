@@ -6,7 +6,10 @@
 package com.example.crud.model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
@@ -19,8 +22,10 @@ import lombok.Data;
 @Table(name = "photo")
 @Data
 public class PhotoEntity implements Serializable {
-    @Id
+
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+//    @Column(name = "id")
     private Long id;
     private String title;
-    private String url;    
+    private String url;
 }
