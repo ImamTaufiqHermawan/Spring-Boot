@@ -50,10 +50,21 @@ public class FlickrController {
         });
         return results;
     }
-    
+
     @GetMapping("/photos")
     public List<PhotoEntity> getPhotos() {
         return flickrRepo.findAll();
+    }
+
+    @GetMapping("/photo/{id}")
+    public PhotoEntity findPhoto(@PathVariable Long id) {
+        return flickrRepo.findById(id).orElse(null);
+    }
+
+    @DeleteMapping("/photo/{id}")
+    public String deletePhoto(@PathVariable Long id) {
+        flickrRepo.deleteById(id);
+        return "product by id : " + id + " removed" ;    
     }
 
 }

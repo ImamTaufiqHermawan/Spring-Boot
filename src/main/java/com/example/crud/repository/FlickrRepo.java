@@ -6,6 +6,7 @@
 package com.example.crud.repository;
 
 import com.example.crud.model.PhotoEntity;
+import com.flickr4java.flickr.photos.Photo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +17,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FlickrRepo extends JpaRepository<PhotoEntity, Long>{
+
+    public Photo findById(int id);
     
 }
